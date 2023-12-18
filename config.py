@@ -18,7 +18,7 @@ class Alg(Enum):
     lkh = 'lkh'
 
 
-ALG = Alg.lkh
+ALG = Alg.christofides_algorithm
 
 # Parameters
 if ALG == Alg._2_opt:
