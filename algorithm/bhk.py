@@ -1,11 +1,10 @@
 ############################################################################
 
-# Created by: Prof. Valdecy Pereira, D.Sc.
-# UFF - Universidade Federal Fluminense (Brazil)
-# email:  valdecy.pereira@gmail.com
+
+
 # Lesson: Bellman-Held-Karp Exact Algorithm
  
-# GitHub Repository: <https://github.com/Valdecy>
+
 
 ############################################################################
 

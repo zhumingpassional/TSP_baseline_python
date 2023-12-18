@@ -1,11 +1,10 @@
 ############################################################################
 
-# Created by: Prof. Valdecy Pereira, D.Sc.
-# UFF - Universidade Federal Fluminense (Brazil)
-# email:  valdecy.pereira@gmail.com
+
+
 # Lesson: Nearest Neighbour
  
-# GitHub Repository: <https://github.com/Valdecy>
+
 
 ############################################################################
 
