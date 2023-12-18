@@ -15,9 +15,10 @@ class Alg(Enum):
     simulated_annealing = 'simulated_annealing'
     tabu_search = 'tabu_search'
     greedy_karp_steele_patching = 'greedy_karp_steele_patching'
+    lkh = 'lkh'
 
 
-ALG = Alg.farthest_insertion
+ALG = Alg.lkh
 
 # Parameters
 if ALG == Alg._2_opt:
@@ -51,6 +52,11 @@ elif ALG == Alg.genetic_algorithm:
 elif ALG == Alg.greedy_karp_steele_patching:
     PARAMETERS = {
         'verbose': True
+    }
+elif ALG == Alg.lkh:
+    PARAMETERS = {
+        'max_trials': 10000,
+        'runs': 10
     }
 elif ALG == Alg.nearest_insertion:
     PARAMETERS = {
