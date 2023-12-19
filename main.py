@@ -17,12 +17,6 @@ def run():
     distance_matrix = util.build_distance_matrix(coordinates)
 
 
-    if ALG == Alg._2_opt:
-        seed = util.seed_function(distance_matrix)
-        route, distance = local_search_2_opt(distance_matrix, seed, **PARAMETERS)
-    elif ALG == Alg._3_opt:
-        seed = util.seed_function(distance_matrix)
-        route, distance = local_search_3_opt(distance_matrix, seed, **PARAMETERS)
     if ALG == Alg.cheapest_insertion:
         route, distance = cheapest_insertion(distance_matrix, **PARAMETERS)
     elif ALG == Alg.christofides_algorithm:
@@ -40,6 +34,12 @@ def run():
         problem = lkh.LKHProblem.parse(problem_str)
         solver_path = 'LKH-3.0.6/LKH_mac'
         lkh.solve(solver_path, problem=problem, **PARAMETERS)
+    elif ALG == Alg.local_search_2_opt:
+        seed = util.seed_function(distance_matrix)
+        route, distance = local_search_2_opt(distance_matrix, seed, **PARAMETERS)
+    elif ALG == Alg.local_search_3_opt:
+        seed = util.seed_function(distance_matrix)
+        route, distance = local_search_3_opt(distance_matrix, seed, **PARAMETERS)
     elif ALG == Alg.nearest_insertion:
         route, distance = nearest_neighbour(distance_matrix, **PARAMETERS)
     elif ALG == Alg.nearest_neighbour:

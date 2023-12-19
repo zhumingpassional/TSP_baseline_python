@@ -4,8 +4,8 @@ FILE_NAME = 'https://github.com/Valdecy/Datasets/raw/master/Combinatorial/TSP-02
 # FILE_NAME = 'data/att48.tsp'
 
 class Alg(Enum):
-    _2_opt = '_2_opt'
-    _3_opt = '_3_opt'
+    local_search_2_opt = 'local_search_2_opt'
+    local_search_3_opt = 'local_search_3_opt'
     cheapest_insertion = 'cheapest_insertion'
     christofides_algorithm = 'christofides_algorithm'
     farthest_insertion = 'farthest_insertion'
@@ -18,15 +18,15 @@ class Alg(Enum):
     lkh = 'lkh'
 
 
-ALG = Alg.christofides_algorithm
+ALG = Alg.local_search_2_opt
 
 # Parameters
-if ALG == Alg._2_opt:
+if ALG == Alg.local_search_2_opt:
     PARAMETERS = {
                 'recursive_seeding': -1, # Total Number of Iterations. If This Value is Negative Then the Algorithm Only Stops When Convergence is Reached
                 'verbose': True
                  }
-elif ALG == Alg._3_opt:
+elif ALG == Alg.local_search_3_opt:
     PARAMETERS = {
                 'recursive_seeding': -1, # Total Number of Iterations. If This Value is Negative Then the Algorithm Only Stops When Convergence is Reached
                 'verbose': True
