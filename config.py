@@ -1,7 +1,7 @@
 from enum import Enum
 
-FILE_NAME = 'https://github.com/Valdecy/Datasets/raw/master/Combinatorial/TSP-02-Coordinates.txt'
-# FILE_NAME = 'data/att48.tsp'
+# FILE_NAME = 'https://github.com/Valdecy/Datasets/raw/master/Combinatorial/TSP-02-Coordinates.txt'
+FILE_NAME = 'data/att48.tsp'
 
 class Alg(Enum):
     local_search_2_opt = 'local_search_2_opt'
