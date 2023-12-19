@@ -1,22 +1,20 @@
-# Required Libraries
 import pandas as pd
-
 from algorithm import *
-from utils import graphs, util
+import util
 from config import *
-
-
+from util import plot_tour
+from util import read_tsp_file
 def run():
 
     # Loading Coordinates # Berlin 52 (Minimum Distance = 7544.3659)
-    coordinates = pd.read_csv('https://github.com/Valdecy/Datasets/raw/master/Combinatorial/TSP-02-Coordinates.txt',
-                              sep='\t')
-    coordinates = coordinates.values
+    if 'Coordinates' in FILE_NAME:
+        coordinates = pd.read_csv(FILE_NAME, sep='\t')
+        coordinates = coordinates.values
+    elif 'tsp' in FILE_NAME:
+        coordinates = read_tsp_file(FILE_NAME)
 
     # Obtaining the Distance Matrix
     distance_matrix = util.build_distance_matrix(coordinates)
-
-
 
 
     if ALG == Alg._2_opt:
@@ -54,7 +52,7 @@ def run():
 
     if ALG != Alg.lkh:
         # Plot Locations and Tour
-        graphs.plot_tour(coordinates, city_tour=route, view='notebook', size=10)
+        plot_tour(coordinates, city_tour=route, view='notebook', size=10)
         print('Total Distance: ', round(distance, 2))
 
 def main():
