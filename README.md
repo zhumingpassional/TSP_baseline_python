@@ -14,6 +14,7 @@ FILE_NAME = 'https://github.com/Valdecy/Datasets/raw/master/Combinatorial/TSP-02
 ALG = Alg._2_opt # select alg name
 
 if ALG == Alg._2_opt:
+
     PARAMETERS = {
                 'recursive_seeding': -1, # Total Number of Iterations. If This Value is Negative Then the Algorithm Only Stops When Convergence is Reached
                 'verbose': True
