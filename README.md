@@ -1,4 +1,5 @@
-# pyCombinatorial
+# TSP_baseline_python
+
 
 ## Introduction
 
@@ -6,49 +7,23 @@ A library to solve the TSP (Travelling Salesman Problem) using Exact Algorithms,
 
 ## Usage
 
-1. Install
+1. Set parameters in config.py
 
-```bash
-pip install pyCombinatorial
-```
+FILE_NAME = 'https://github.com/Valdecy/Datasets/raw/master/Combinatorial/TSP-02-Coordinates.txt'
 
-2. Import
+ALG = Alg._2_opt # select alg name
 
-```py3
+if ALG == Alg._2_opt:
+    PARAMETERS = {
+                'recursive_seeding': -1, # Total Number of Iterations. If This Value is Negative Then the Algorithm Only Stops When Convergence is Reached
+                'verbose': True
+                 }
 
 
-# Required Libraries
-import pandas as pd
+2. Run
 
-# GA
-from pyCombinatorial.algorithm import genetic_algorithm
-from pyCombinatorial.utils import graphs, util
+python main.py
 
-# Loading Coordinates # Berlin 52 (Minimum Distance = 7544.3659)
-coordinates = pd.read_csv('https://bit.ly/3Oyn3hN', sep = '\t') 
-coordinates = coordinates.values
-
-# Obtaining the Distance Matrix
-distance_matrix = util.build_distance_matrix(coordinates)
-
-# GA - Parameters
-parameters = {
-            'population_size': 15,
-            'elite': 1,
-            'mutation_rate': 0.1,
-            'mutation_search': 8,
-            'generations': 1000,
-            'verbose': True
-             }
-
-# GA - Algorithm
-route, distance = genetic_algorithm(distance_matrix, **parameters)
-
-# Plot Locations and Tour
-graphs.plot_tour(coordinates, city_tour = route, view = 'browser', size = 10)
-print('Total Distance: ', round(distance, 2))
-
-```
 
 3. Try it in **Colab** 
 
@@ -100,8 +75,4 @@ print('Total Distance: ', round(distance, 2))
 - Twice-Around the Tree Algorithm ([ Colab Demo ](https://colab.research.google.com/drive/1tf5tc5DxvEUc89JaaFgzmK1TtD1e4fkc?usp=sharing)) ( [ Paper ](https://doi.org/10.1016/0196-6774(84)90029-4)) 
 - Variable Neighborhood Search ([ Colab Demo ](https://colab.research.google.com/drive/1yMWjYuurzpcijsCFDTA76fAwJmSaDkZq?usp=sharing)) ( [ Paper ](https://doi.org/10.1016/S0305-0548(97)00031-2)) 
 
-# Single Objective Optimization
-For Single Objective Optimization try [pyMetaheuristic](https://github.com/Valdecy/pyMetaheuristic)
 
-# Multiobjective Optimization or Many Objectives Optimization
-For Multiobjective Optimization or Many Objectives Optimization try [pyMultiobjective](https://github.com/Valdecy/pyMultiobjective)
