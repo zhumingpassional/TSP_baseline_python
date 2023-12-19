@@ -52,8 +52,9 @@ def run():
 
     if ALG != Alg.lkh:
         # Plot Locations and Tour
-        plot_tour(coordinates, city_tour=route, view='notebook', size=10)
         print('Total Distance: ', round(distance, 2))
+        plot_tour(coordinates, city_tour=route, view='notebook', size=10)
+
 
 def main():
     run()
