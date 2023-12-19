@@ -9,22 +9,23 @@ A library to solve the TSP (Travelling Salesman Problem) using Exact Algorithms,
 
 1. Set parameters in config.py
 
-FILE_NAME = 'https://github.com/Valdecy/Datasets/raw/master/Combinatorial/TSP-02-Coordinates.txt'
-
-ALG = Alg._2_opt # select alg name
-
-if ALG == Alg._2_opt:
-
+```bash
+FILE_NAME = 'data/att48.tsp' # file name
+ALG = Alg.local_search_2_opt # select alg
+# set parameters
+if ALG == Alg.local_search_2_opt:
     PARAMETERS = {
                 'recursive_seeding': -1, # Total Number of Iterations. If This Value is Negative Then the Algorithm Only Stops When Convergence is Reached
                 'verbose': True
                  }
 
+```
 
 2. Run
 
+```bash
 python main.py
-
+```
 
 3. Try it in **Colab** 
 
