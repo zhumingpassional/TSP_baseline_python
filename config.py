@@ -1,7 +1,7 @@
 from enum import Enum
 
 FILE_NAME = 'https://github.com/Valdecy/Datasets/raw/master/Combinatorial/TSP-02-Coordinates.txt'
-
+# FILE_NAME = 'data/att48.tsp'
 
 class Alg(Enum):
     _2_opt = '_2_opt'
@@ -18,7 +18,7 @@ class Alg(Enum):
     lkh = 'lkh'
 
 
-ALG = Alg.lkh
+ALG = Alg.christofides_algorithm
 
 # Parameters
 if ALG == Alg._2_opt:
